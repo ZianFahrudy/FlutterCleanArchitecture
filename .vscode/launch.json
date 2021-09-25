@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "FoodShop DEV",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "foodshopdev"
+            ]
+        },
+        {
+            "name": "FoodShop STAG",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "foodshopstag"
+            ]
+        },
+        {
+            "name": "FoodShop PROD",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "foodshopprod"
+            ]
+        },
+        {
+            "name": "Driver Test",
+            "request": "launch",
+            "program": "test_driver/app.dart",
+            "type": "dart",
+            "args": []
+        }
+    ]
+}

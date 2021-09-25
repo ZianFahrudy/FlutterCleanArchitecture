@@ -6,16 +6,11 @@ import 'config.dart';
 /// * see details about [flutter flavor]
 class FlavorSettings {
   /// support api and flavor
-  FlavorSettings.sman2bantuldev() {
+  FlavorSettings.foodshopdev() {
     Config.getInstance(
-      flavorName: 'development',
+      flavorName: 'foodshopdev',
       packageName: 'com.zian.foodshop',
-      apiBaseUrl: 'http://dev-url',
-      socketUrl: 'https://client.socket.zian.my.id',
-      socketToken: 'KjdEhsksOe',
-      apiSentry: 'http://sentry-url',
-      assetsUri: 'assets/img/foodshop',
-      uriPrefix: 'https://fooshop.page.link',
+      apiBaseUrl: 'http://foodmarket-backend.buildwithangga.id',
       accentColor: Color(0xFF95D16F),
       primaryColor: Color(0xFF5FA036),
       primaryColorLight: Color(0xFF8EE359),
@@ -24,16 +19,11 @@ class FlavorSettings {
     );
   }
 
-  FlavorSettings.sman2bantulstag() {
+  FlavorSettings.foodshopstag() {
     Config.getInstance(
-      flavorName: 'staging',
+      flavorName: 'foodshopstag',
       packageName: 'com.zian.foodshop',
-      apiBaseUrl: 'http://dev-stag',
-      socketUrl: 'https://client.socket.zian.my.id',
-      socketToken: 'KjdEhsksOe',
-      apiSentry: 'http://sentry-url',
-      assetsUri: 'assets/img/foodshop',
-      uriPrefix: 'https://fooshop.page.link',
+      apiBaseUrl: 'http://foodmarket-backend.buildwithangga.id',
       accentColor: Color(0xFF95D16F),
       primaryColor: Color(0xFF5FA036),
       primaryColorLight: Color(0xFF8EE359),
@@ -42,16 +32,11 @@ class FlavorSettings {
     );
   }
 
-  FlavorSettings.sman2bantul() {
+  FlavorSettings.foodshop() {
     Config.getInstance(
-      flavorName: 'production',
+      flavorName: 'foodshopprod',
       packageName: 'com.zian.foodshop',
-      apiBaseUrl: 'http://dev-prod',
-      socketUrl: 'https://client.socket.zian.my.id',
-      socketToken: 'KjdEhsksOe',
-      apiSentry: 'http://sentry-url',
-      assetsUri: 'assets/img/foodshop',
-      uriPrefix: 'https://fooshop.page.link',
+      apiBaseUrl: 'http://foodmarket-backend.buildwithangga.id',
       accentColor: Color(0xFF95D16F),
       primaryColor: Color(0xFF5FA036),
       primaryColorLight: Color(0xFF8EE359),
