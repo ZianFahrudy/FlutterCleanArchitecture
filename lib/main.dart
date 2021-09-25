@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_clean_architecture/app.dart';
 import 'package:flutter_clean_architecture/env/flavor.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:flutter_clean_architecture/core/di/injection_container.dart'
     as di;
 import 'core/utility/observer.dart';
@@ -29,9 +28,9 @@ void main() {
     }
   };
 
-  /// [init sentry event]
-  SentryEvent processTagEvent(SentryEvent event, {dynamic hint}) =>
-      event..tags!.addAll({'page-locale': 'id_ID'});
+  // /// [init sentry event]
+  // SentryEvent processTagEvent(SentryEvent event, {dynamic hint}) =>
+  //     event..tags!.addAll({'page-locale': 'id_ID'});
 
   /// [run apps] with catch error
   runZonedGuarded(() async {

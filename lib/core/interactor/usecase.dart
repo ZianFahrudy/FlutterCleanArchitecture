@@ -15,9 +15,10 @@ abstract class UseCase<Type, Params> {
         failure = error;
       } else if (error is DioError) {
         if (error.response!.statusCode! < 500) {
-          failure = ServerFailure(message: error.response!.data['message']);
+          failure =
+              ServerFailure(message: error.response!.data['meta']['message']);
         } else {
-          final message = error.response!.statusMessage;
+          final message = error.response!.data['meta']['message'];
           failure = ServerFailure(message: message);
         }
       } else {

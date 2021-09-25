@@ -1,6 +1,10 @@
+import 'package:flutter_clean_architecture/core/components/blocs/user/bloc/login_bloc.dart';
 import 'package:flutter_clean_architecture/core/components/data/datasources/binding/binding_local.dart';
 import 'package:flutter_clean_architecture/core/components/data/datasources/binding/binding_remote.dart';
 import 'package:flutter_clean_architecture/core/components/data/datasources/common/datasource_factory.dart';
+import 'package:flutter_clean_architecture/core/components/data/repositories/user_repository_impl.dart';
+import 'package:flutter_clean_architecture/core/components/domains/repository/user_repository.dart';
+import 'package:flutter_clean_architecture/core/components/domains/usecases/login_usecase.dart';
 import 'package:flutter_clean_architecture/core/network/http_client.dart';
 import 'package:flutter_clean_architecture/core/storage/local_storage.dart';
 import 'package:flutter_clean_architecture/env/config.dart';
@@ -44,11 +48,11 @@ Future<void> init() async {
         bindingLocal: sl(),
       ));
   // sl.registerFactory<AppRepository>(() => AppRepositoryImpl(sl()));
-  // sl.registerFactory<UserRepository>(() => UserRepositoryImpl(sl()));
+  sl.registerFactory<UserRepository>(() => UserRepositoryImpl(sl()));
 
   /// [useCase]
   ///define request to dataSource
-  // sl.registerFactory(() => UpdateLanguageUseCase(sl()));
+  sl.registerFactory(() => LoginUseCase(sl()));
   // sl.registerFactory(() => GetPreferredLanguageUseCase(sl()));
 
   /// [blocs]
@@ -60,5 +64,5 @@ Future<void> init() async {
   //   ),
   // );
   // sl.registerFactory(() => ToggleDrawerCubit());
-  // sl.registerFactory(() => LoginBloc(sl()));
+  sl.registerFactory(() => LoginBloc(sl()));
 }
