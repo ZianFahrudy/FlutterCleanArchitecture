@@ -1,4 +1,4 @@
-import 'package:flutter_clean_architecture/core/components/blocs/user/bloc/login_bloc.dart';
+import 'package:flutter_clean_architecture/core/components/blocs/user/login/login_bloc.dart';
 import 'package:flutter_clean_architecture/core/components/data/datasources/binding/binding_local.dart';
 import 'package:flutter_clean_architecture/core/components/data/datasources/binding/binding_remote.dart';
 import 'package:flutter_clean_architecture/core/components/data/datasources/common/datasource_factory.dart';

@@ -5,7 +5,7 @@ import 'package:flutter_clean_architecture/app/widgets/appbar/appbar_widget.dart
 import 'package:flutter_clean_architecture/app/widgets/button/button_widget.dart';
 import 'package:flutter_clean_architecture/app/widgets/loader/loader_widget.dart';
 import 'package:flutter_clean_architecture/app/widgets/textfield/textfield_widget.dart';
-import 'package:flutter_clean_architecture/core/components/blocs/user/bloc/login_bloc.dart';
+import 'package:flutter_clean_architecture/core/components/blocs/user/login/login_bloc.dart';
 import 'package:flutter_clean_architecture/core/components/data/models/request/login_body.dart';
 import 'package:flutter_clean_architecture/core/di/injection_container.dart';
 import 'package:flutter_clean_architecture/core/utility/palette.dart';

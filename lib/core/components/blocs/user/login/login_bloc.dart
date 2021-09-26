@@ -14,31 +14,58 @@ import 'package:flutter_clean_architecture/core/storage/local_storage.dart';
 part 'login_event.dart';
 part 'login_state.dart';
 
+// class LoginBloc extends Bloc<LoginEvent, LoginState> {
+//   final SharedPrefs prefs = sl<SharedPrefs>();
+
+//   final LoginUseCase loginUseCase;
+//   LoginBloc(this.loginUseCase) : super(LoginInitial());
+
+//   @override
+//   Stream<LoginState> mapEventToState(
+//     LoginEvent event,
+//   ) async* {
+//     if (event is OnLoginEvent) {
+//       yield LoginLoading();
+
+//       final Stream<Either<Failure, LoginModelEntity>> response =
+//           loginUseCase.execute(event.body);
+
+//       await for (final eventRes in response) {
+//         yield* eventRes.fold((error) async* {
+//           yield LoginFailure(error.message);
+//         }, (values) async* {
+//           prefs.putString(
+//               KeyConstants.keyAccessToken, values.data!.accessToken!);
+//           yield LoginSuccess();
+//         });
+//       }
+//     }
+//   }
+// }
+
+/// [update bloc 7.2.0]
+
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final SharedPrefs prefs = sl<SharedPrefs>();
 
   final LoginUseCase loginUseCase;
-  LoginBloc(this.loginUseCase) : super(LoginInitial());
 
-  @override
-  Stream<LoginState> mapEventToState(
-    LoginEvent event,
-  ) async* {
-    if (event is OnLoginEvent) {
-      yield LoginLoading();
+  LoginBloc(this.loginUseCase) : super(LoginInitial()) {
+    on<OnLoginEvent>((event, emit) async {
+      emit(LoginLoading());
 
       final Stream<Either<Failure, LoginModelEntity>> response =
           loginUseCase.execute(event.body);
 
       await for (final eventRes in response) {
-        yield* eventRes.fold((error) async* {
-          yield LoginFailure(error.message);
-        }, (values) async* {
+        eventRes.fold((error) {
+          emit(LoginFailure(error.message));
+        }, (values) {
           prefs.putString(
               KeyConstants.keyAccessToken, values.data!.accessToken!);
-          yield LoginSuccess();
+          emit(LoginSuccess());
         });
       }
-    }
+    });
   }
 }
