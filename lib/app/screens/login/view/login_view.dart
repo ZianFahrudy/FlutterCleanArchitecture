@@ -41,7 +41,7 @@ class _LoginViewState extends State<LoginView> {
       create: (context) => widget.loginBloc,
       child: BlocConsumer<LoginBloc, LoginState>(listener: (context, state) {
         if (state is LoginFailure) {
-          Get.snackbar("Oopss", state.message,
+          Get.snackbar("Oopsssss", state.message,
               snackPosition: SnackPosition.TOP,
               backgroundColor: Palette.redColor,
               colorText: Colors.white);
