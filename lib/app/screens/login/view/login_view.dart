@@ -72,12 +72,14 @@ class _LoginViewState extends State<LoginView> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextFieldWidget(
+                                key: const Key("emailField"),
                                 controller: emailController,
                                 hintText: "Type yout email address",
                                 labelText: "Email Address",
                                 prefixIcon: Icon(Icons.email),
                               ),
                               TextFieldWidget(
+                                key: const Key("passwordField"),
                                 controller: passwordController,
                                 hintText: "Type your password",
                                 labelText: "Password",
